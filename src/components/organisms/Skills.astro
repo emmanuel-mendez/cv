@@ -1,0 +1,39 @@
+---
+import Section from "../molecules/Section.astro";
+
+interface Props {
+  title?: string;
+  list?: string[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<Section>
+  <div class="body flex flex-col gap-4">
+    <h2>{title}</h2>
+    <ul class="flex flex-col list-disc list-inside gap-1">
+      {
+        list?.map((skill) => (
+          <li>
+            <p class="inline">{skill}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>
+
+<style>
+  ul {
+    @media screen and (min-width: 672px) {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(124px, calc(33.33% - 1.25rem))
+      );
+      justify-content: space-between;
+      column-gap: 1.25rem;
+    }
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  image?: string;
+  url?: string;
+  name?: string;
+  isActive?: boolean;
+  description?: string;
+  highlights?: string[];
+}
+
+const { image, url, name, isActive, description, highlights } = Astro.props;
+---
+
+<article class="flex flex-col gap-5">
+  {
+    image && name && (
+      <a href={url} target="_blank" title={name} rel="noopener noreferrer">
+        <figure>
+          <Image src={image} alt={name} width="64" height="64" />
+        </figure>
+      </a>
+    )
+  }
+
+  <div class="body flex flex-col gap-3">
+    <header>
+      <h3>
+        <a href={url} target="_blank" title={name} rel="noopener noreferrer"
+          >{name}
+          <span
+            aria-label={`Project status: ${isActive ? "Active" : "Inactive"}`}
+          >
+            ({isActive ? "Active" : "Inactive"})
+          </span>
+        </a>
+      </h3>
+
+      <p>{description}</p>
+    </header>
+    <ul>
+      {
+        highlights?.map((highlight) => (
+          <li>
+            <p>{highlight}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</article>
+
+<style>
+  article {
+    @media print {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+    @media screen and (min-width: 27.1875rem) {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  h3 span {
+    color: var(--analogous-primary-50);
+    font-size: 1rem;
+  }
+</style>

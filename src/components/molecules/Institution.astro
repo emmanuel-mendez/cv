@@ -1,0 +1,36 @@
+---
+export interface Props {
+  institution?: string;
+  degree?: string;
+  startDate?: Date;
+  endDate?: Date;
+}
+
+const { institution, degree, startDate, endDate } = Astro.props;
+---
+
+<article>
+  <h3>{institution}</h3>
+
+  <p>{degree}</p>
+
+  <p>
+    <time datetime={startDate?.toISOString()}>
+      {
+        startDate?.toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        })
+      }
+    </time>
+    -
+    <time datetime={endDate?.toISOString()}>
+      {
+        endDate?.toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        })
+      }
+    </time>
+  </p>
+</article>

@@ -1,0 +1,28 @@
+---
+import Institution, {
+  type Props as InstitutionProps,
+} from "../molecules/Institution.astro";
+import Section from "../molecules/Section.astro";
+
+interface Props {
+  title?: string;
+  list?: InstitutionProps[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<Section>
+  <div class="body flex flex-col gap-4">
+    <h2>{title}</h2>
+    <ul class="flex flex-col gap-6">
+      {
+        list?.map((institution) => (
+          <li>
+            <Institution {...institution} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>

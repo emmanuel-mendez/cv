@@ -1,0 +1,180 @@
+---
+import Icon from "../atoms/Icon.astro";
+import Section from "../molecules/Section.astro";
+
+interface Props {
+  fullName?: string;
+  headline?: string;
+  image?: string;
+  email?: string;
+  phone?: string;
+  url?: string;
+  profiles?: BasisProfile[];
+}
+
+interface BasisProfile {
+  url?: string;
+  network?: string;
+  username?: string;
+}
+
+const { fullName, headline, image, email, phone, profiles } = Astro.props;
+---
+
+<Section>
+  <artcile class="host flex flex-col-reverse items-start gap-2">
+    <div class="body flex flex-col gap-2">
+      <header class="information flex flex-col">
+        <h1 class="name">{fullName}</h1>
+        <p class="headline">{headline}</p>
+      </header>
+
+      <footer class="footer print flex justify-center gap-5 text-center">
+        {
+          [
+            email?.trim(),
+            phone?.trim(),
+            ...(profiles || []).map(({ network, url }) => ({ network, url })),
+          ]
+            .filter(Boolean)
+            .map((item, index, arr) => {
+              const profile = typeof item === "string" ? item : item?.url;
+              return (
+                <>
+                  {profile?.trim() === phone?.trim() ? (
+                    <a
+                      class="link profile profile--print"
+                      href={`tel:${profile}`}
+                      target="_blank"
+                      title={`Llamar por teléfono a ${fullName} al número ${phone}`}
+                      rel="noopener noreferrer"
+                    >
+                      {profile}
+                    </a>
+                  ) : (
+                    <a
+                      class="link profile profile--print"
+                      href={profile}
+                      target="_blank"
+                      title={profile}
+                      rel="noopener noreferrer"
+                    >
+                      {profile}
+                    </a>
+                  )}
+                  {index < arr.length - 1 && <span class="separator" />}
+                </>
+              );
+            })
+        }
+      </footer>
+      <aside class="footer no-print flex flex-wrap gap-2">
+        {
+          email && (
+            <a
+              class="profile profile--no-print"
+              href={`mailto:${email}`}
+              target="_blank"
+              title={`Enviar un correo electrónico a ${fullName} al correo ${email}`}
+              rel="noopener noreferrer"
+            >
+              <Icon name="Mail" />
+            </a>
+          )
+        }
+        {
+          phone && (
+            <a
+              class="profile profile--no-print"
+              href={`tel:${phone}`}
+              target="_blank"
+              title={`Llamar por teléfono a ${fullName} al número ${phone}`}
+              rel="noopener noreferrer"
+            >
+              <Icon name="Phone" />
+            </a>
+          )
+        }
+        {
+          profiles &&
+            profiles.map(({ network, url }) => {
+              if (network) {
+                return (
+                  <a
+                    class="profile profile--no-print"
+                    href={url}
+                    target="_blank"
+                    title={`Visitar el perfil de ${fullName} en ${network}`}
+                    rel="noopener noreferrer"
+                  >
+                    <Icon name={network} />
+                  </a>
+                );
+              }
+            })
+        }
+      </aside>
+    </div>
+
+    <figure class="picture no-print flex items-center justify-center">
+      {image && <img class="image" src={image} alt={fullName} width="112" />}
+    </figure>
+  </artcile>
+</Section>
+
+<style>
+  .host {
+    @media screen and (min-width: 27.1875rem) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      justify-content: space-between;
+    }
+  }
+
+  .name {
+    word-break: break-word;
+  }
+
+  .headline {
+    font-size: 0.85rem;
+
+    @media (min-width: 37.5rem) {
+      font-size: 1rem;
+    }
+  }
+
+  .profile {
+    font-size: 0.75rem;
+
+    &:hover {
+      color: var(--analogous--primary);
+    }
+
+    &--print {
+      color: var(--analogous--secondary-50);
+    }
+
+    &--no-print {
+      padding-inline: 0.25rem;
+    }
+  }
+
+  .separator {
+    padding: 1ch;
+  }
+
+  .image {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: var(--primary);
+    border-radius: 1rem;
+  }
+
+  @media (min-width: 37.5rem) {
+    .name {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+</style>

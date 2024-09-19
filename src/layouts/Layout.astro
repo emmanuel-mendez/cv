@@ -1,0 +1,129 @@
+---
+import { getEntry } from "astro:content";
+
+export const LAYOUT_DEFAULT_DATA = {
+  primary: "#800080",
+  analogousPrimary: "#400080",
+  analogousPrimary50: "#40008080",
+  analogousSecondary: "#800040",
+  analogousSecondary50: "#800040b0",
+  monochromaticDarkDeep: "#4d004d",
+};
+
+interface Props {
+  title: string;
+}
+
+const config = await getEntry("config", "data");
+
+const { colors } = config.data;
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Aleayza is a free and open-source template, built with Astro and TypeScript. It serves as a starting point for creating your personal portfolio website or showcasing your projects online. The template is open-source and released under the MIT license, meaning you are free to use, modify, and distribute it for personal or commercial purposes."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="layout flex flex-col gap-8">
+    <slot />
+  </body>
+</html>
+
+<style define:vars={{ ...colors }} is:global>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+
+  h1 {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  h2 {
+    color: var(--monochromatic--dark-deep);
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    color: var(--analogous--secondary);
+    font-size: 1.25rem;
+  }
+
+  dt {
+    color: var(--analogous--secondary);
+    font-size: 1.15rem;
+  }
+
+  a {
+    transition: color 0.2s ease;
+  }
+
+  a.link {
+    text-decoration: underline;
+  }
+
+  a.link:hover,
+  a.link:focus {
+    color: var(--analogous--primary);
+  }
+
+  a.link:hover.link--disabled,
+  a.link:focus.link--disabled {
+    color: inherit;
+  }
+
+  a.link--disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  p {
+    max-width: 75ch;
+  }
+
+  li::marker {
+    color: var(--analogous--secondary);
+  }
+
+  .print {
+    display: none !important;
+  }
+
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .print {
+      display: block !important;
+    }
+  }
+
+  .layout {
+    min-height: 100svh;
+    padding: 2rem 1rem;
+
+    @media (min-width: 48rem) {
+      padding: 4rem 2rem;
+    }
+  }
+</style>

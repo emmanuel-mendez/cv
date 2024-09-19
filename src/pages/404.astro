@@ -1,0 +1,74 @@
+---
+import { getEntry } from "astro:content";
+import Section from "../components/molecules/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+export const DEFAULT_PAGE_NOT_FOUND_DATA = {
+  title: "404",
+  description: "Page not found",
+  information: "The page you are looking for does not exist.",
+  goBack: "Go back to portfolio",
+};
+
+const notFoundPage = await getEntry("notFoundPage", "data");
+
+const { title, description, information, goBack } = notFoundPage.data;
+---
+
+<Layout title="Aleayza">
+  <Section>
+    <div class="body flex flex-col items-center justify-center gap-5">
+      <header class="header flex items-center justify-center">
+        <h1 class="title">{title}</h1>
+        <p class="description">{description}</p>
+      </header>
+
+      <footer class="footer flex items-center justify-center">
+        <p class="description information">
+          {information}
+        </p>
+        <a
+          class="link go-back"
+          href="/"
+          title={goBack}
+          rel="noopener noreferrer">{goBack}</a
+        >
+      </footer>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .body {
+    min-height: 100%;
+  }
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .information {
+    text-align: center;
+  }
+
+  .go-back {
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 37.5rem) {
+    .title {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+</style>

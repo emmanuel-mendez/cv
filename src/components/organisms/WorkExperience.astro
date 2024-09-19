@@ -1,0 +1,28 @@
+---
+import Position, {
+  type Props as PositionProps,
+} from "../molecules/Position.astro";
+import Section from "../molecules/Section.astro";
+
+interface Props {
+  title?: string;
+  list?: PositionProps[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<Section>
+  <div class="body flex flex-col gap-4">
+    <h2>{title}</h2>
+    <ul class="flex flex-col gap-6">
+      {
+        list?.map((position) => (
+          <li>
+            <Position {...position} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>
