@@ -1,10 +1,18 @@
-# Aleayza
+# Emmanuel Mendez
+
+**Computer Engineer** with more than **three years** of experience creating high performant and user retention pages, sites and web applications using **TypeScript** and frontend frameworks such as **Angular** and **React**, managing global states with **NgRx** and **Redux**, documenting UI components in **Storybook** and unit testing them using **Jest**, **Jasmine** and **Karma**.
+
+Expert in using CSS frameworks and UI component libraries to style and enhance the UX of web applications, such as **PostCSS**, **Sass**, **CSS Modules**, **Styled Components**, **Emotion**, **Bootstrap**, **Tailwind CSS** and **Angular Material**.
+
+Able to write clean and scalable code applying best practices, **programming principles**, **object-oriented programming**, **reactive programming** with **RxJS**, **functional programming**, **design patterns** and **atomic design**.
+
+# Powered by Aleayza
 
 <p align="center">
   <img align="center" alt="Aleayza" src="https://raw.githubusercontent.com/emmanuel-mendez/aleayza/main/public/images/aleayza-repository-open-graph.png"/>
 </p>
 
-Aleayza lets you create both your personal portfolio website and professional CV in one place. This minimalist template is designed for high performance, is fully customizable, and is easily scalable. Inspired by https://github.com/BartoszJarocki/cv and https://github.com/gndx/ev0-astro-theme projects.
+Aleayza is a free and **open-source template**, built with **Astro** and **TypeScript**. It serves as a starting point for creating your **personal portfolio website** or **showcasing your projects** online. The template is open-source and released under the MIT license, meaning you are free to use, modify, and distribute it for personal or commercial purposes.
 
 ## Project Structure
 
