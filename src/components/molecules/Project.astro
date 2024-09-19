@@ -40,13 +40,7 @@ const { image, url, name, isActive, description, highlights } = Astro.props;
       <p>{description}</p>
     </header>
     <ul class="flex flex-col gap-1 list-disc list-inside">
-      {
-        highlights?.map((highlight) => (
-          <li>
-            <p>{highlight}</p>
-          </li>
-        ))
-      }
+      {highlights?.map((highlight) => <li>{highlight}</li>)}
     </ul>
   </div>
 </article>
