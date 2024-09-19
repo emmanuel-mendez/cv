@@ -1,61 +1,60 @@
 basis:
   fullName: Emmanuel Mendez
-  headline: Headline
+  headline: Computer engineer
   image: ./images/me.webp
-  email: user@email.com
-  phone: 000-000-0000
-  url: https://example.com
+  email: emmanuelmendez.dev@outlook.com
+  phone: +58-424-125-3834
+  url: https://emmanuel-mendez.github.io/
   profiles:
     - network: LinkedIn
-      username: username-linkedin
-      url: https://linkedin.com/in/username-linkedin
+      username: emmanuel-mendez-software-engineer
+      url: https://www.linkedin.com/in/emmanuel-mendez-software-engineer/
     - network: GitHub
-      username: username-github
-      url: https://github.com/username-github
-    - network: X
-      username: username-x
-      url: https://x.com/username-x
+      username: emmanuel-mendez
+      url: https://github.com/emmanuel-mendez
 about:
   title: About Me
-  summary: (number)+ years of experience creating (products) and specializing in (specializations).
+  summary: Computer Engineer with more than three years of experience creating high performant and user retention pages, sites and web applications using TypeScript and frontend frameworks such as Angular and React, managing global states with NgRx and Redux, documenting UI components in Storybook and unit testing them using Jest, Jasmine and Karma. Expert in using CSS frameworks and UI component libraries to style and enhance the UX of web applications, such as PostCSS, Sass, CSS Modules, Styled Components, Emotion, Bootstrap, Tailwind CSS and Angular Material. Able to write clean and scalable code applying best practices, programming principles, object-oriented programming, reactive programming with RxJS, functional programming, design patterns and atomic design.
 workExperience:
   title: Work Experience
   list:
-    - role: Role
-      company: Company
+    - role: Frontend Developer
+      company: Genera LLC - Destiny
       location: Miami, USA
       sector: Digital Production
       typeOfCommerce: B2B
-      startDate: 2018-09-01
-      endDate: 2022-05-31
+      startDate: 2021-09-15
       responsibilities: 
-        - Create
-        - Maintain
-        - Upgrade
+        - Create responsive and scalable landing pages, web applications and emails
+        - Maintain Angular legacy projects
+        - Upgrade React and Angular projects to their latest versions
+        - Effectively communicate and collaborate with international colleagues in the US, India, Colombia, and Venezuela using English
       keyAccomplishments: 
-        - Features implemented
-        - Improvements made
-        - Results achieved
-      url: https://example.com/my-project
-      image: https://raw.githubusercontent.com/emmanuel-mendez/aleayza/127ce3cf3522b9ab07f230751c905bc18fb129c0/public/favicon.svg
+        - Propose and lead the training and implementation of methodologies, tools and technologies such as atomic design, test driven development, global state management, docker and documentation of UI components with Storybook.
+        - Write technical manuals of best practices in Angular, CSS, Webiny and Docker.
+        - Create customizable and reusable templates for frontend projects and monorepos with dynamic components.
+        - Implement Atomic Design and define the nomenclature, organization and variants of UI components in constant communication and collaboration with the general design manager.
+      url: https://www.destiny.ws/
+      image: https://media.licdn.com/dms/image/v2/D4E0BAQHZnDWZSgL7Zw/company-logo_200_200/company-logo_200_200/0/1689618179491/destinyws_logo?e=1734566400&v=beta&t=yTVVHuiqiDB40ZtrbZGtvAi-07PmpjAgl4KkqXvtrfU
 projects :
   title: Projects
   list:
-    - name: Project
+    - name: Aleayza
       isActive: true
-      description: Description of the project.
+      description: Template that allow you to create both your personal portfolio website and professional CV in one place. This minimalist template is designed for high performance, is fully customizable, and is easily scalable.
       highlights: 
-        - Features implemented
-        - Improvements made
-        - Results achieved
-        - Technologies used
-      url: https://example.com/my-project
+        - Administrable content and color palette
+        - Content type checking
+        - Very high performance
+        - 100 points on Lighthouse reports
+        - Using Astro and Tailwind CSS
+      url: https://github.com/emmanuel-mendez/aleayza
       image: https://raw.githubusercontent.com/emmanuel-mendez/aleayza/127ce3cf3522b9ab07f230751c905bc18fb129c0/public/favicon.svg
 education:
   title: Education
   list:
-    - institution: University
-      degree: Degree
+    - institution: UNEXCA
+      degree: Computer Engineer
       startDate: 2018-09-01
       endDate: 2022-05-31
 skills:
