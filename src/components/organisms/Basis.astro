@@ -116,7 +116,9 @@ const { fullName, headline, image, email, phone, profiles } = Astro.props;
       </aside>
     </div>
 
-    <figure class="picture no-print flex items-center justify-center">
+    <figure
+      class="picture no-print flex items-center justify-center self-center"
+    >
       {image && <img class="image" src={image} alt={fullName} width="112" />}
     </figure>
   </artcile>
