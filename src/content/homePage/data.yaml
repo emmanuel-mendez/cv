@@ -35,7 +35,7 @@ workExperience:
         - Create customizable and reusable templates for frontend projects and monorepos with dynamic components.
         - Implement Atomic Design and define the nomenclature, organization and variants of UI components in constant communication and collaboration with the general design manager.
       url: https://www.destiny.ws/
-      image: https://media.licdn.com/dms/image/v2/D4E0BAQHZnDWZSgL7Zw/company-logo_200_200/company-logo_200_200/0/1689618179491/destinyws_logo?e=1734566400&v=beta&t=yTVVHuiqiDB40ZtrbZGtvAi-07PmpjAgl4KkqXvtrfU
+      image: ./images/destinyws_logo.jpeg
 projects :
   title: Projects
   list:
