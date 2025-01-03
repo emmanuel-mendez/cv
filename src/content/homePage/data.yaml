@@ -35,7 +35,7 @@ workExperience:
         - Create customizable and reusable templates for frontend projects and monorepos with dynamic components.
         - Implement Atomic Design and define the nomenclature, organization and variants of UI components in constant communication and collaboration with the general design manager.
       url: https://www.destiny.ws/
-      image: ./images/destinyws_logo.jpeg
+      image: https://raw.githubusercontent.com/emmanuel-mendez/cv/refs/heads/main/public/images/destinyws_logo.jpeg
 projects :
   title: Projects
   list:
