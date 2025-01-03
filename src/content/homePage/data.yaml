@@ -14,7 +14,7 @@ basis:
       url: https://github.com/emmanuel-mendez
 about:
   title: About Me
-  summary: Computer Engineer. +3 years experience creating web applications using TypeScript and frontend frameworks, managing global states, documenting UI components and unit testing them. Expert using CSS frameworks and UI component libraries. Advanced knowledge of best practices, programming principles, object-oriented, reactive and functional programming, design patterns and atomic design.
+  summary: +3 years experience creating web applications using TypeScript and frontend frameworks, managing global states, documenting UI components and unit testing them. Expert using CSS frameworks and UI component libraries. Advanced knowledge of best practices, programming principles, object-oriented, reactive and functional programming, design patterns and atomic design.
 workExperience:
   title: Work Experience
   list:
